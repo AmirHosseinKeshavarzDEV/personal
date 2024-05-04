@@ -18,21 +18,51 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px 15px;
+    /* navbar style */
     > #navbar {
       > ul {
         margin: 0;
         padding: 0;
         li {
+          position: relative;
+          display: inline-block;
           list-style-type: none;
           margin-left: 10px;
+          transition: all 0.3s ease 0s;
+          &:hover ul {
+            display: block;
+          }
+          ul {
+            display: none;
+            position: absolute;
+            right: 0;
+            margin: 22px 0 0 0;
+            padding: 10px;
+            box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+            background: #fff;
+            li {
+              width: 180px;
+              margin: 0px;
+              display: block;
+              a {
+                text-wrap: nowrap;
+                padding: 5px 10px;
+                color: #333;
+                transition: 0.3s;
+                display: block;
+                font-size: 12px;
+                text-transform: none;
+              }
+            }
+          }
           a {
             padding: 0 8px;
             color: #222;
             font-size: 13px;
             transition: all 0.5s ease 0s;
             font-weight: 500;
-            &:visited{
-                color: #007bff;
+            &:visited {
+              color: #007bff;
             }
             &:hover {
               color: #007bff;
