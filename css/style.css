@@ -3,6 +3,10 @@ body {
   margin: 0;
   font-family: poppins, sans-serif;
 }
+*::selection {
+  background-color: #8490ff;
+  color: #fff;
+}
 .container {
   width: 1000px;
   margin: 0 auto;
@@ -14,6 +18,7 @@ a {
 /* header styles */
 
 header {
+  background-color: #fff;
   .container {
     display: flex;
     justify-content: space-between;
@@ -24,15 +29,7 @@ header {
         margin: 0;
         padding: 0;
         li {
-          position: relative;
-          display: inline-block;
-          list-style-type: none;
-          margin-left: 10px;
-          transition: all 0.3s ease 0s;
-          &:hover ul {
-            display: block;
-          }
-          ul {
+          > ul {
             display: none;
             position: absolute;
             right: 0;
@@ -40,7 +37,18 @@ header {
             padding: 10px;
             box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
             background: #fff;
-            li {
+            transition: all 180ms ease;
+            ul {
+              display: none;
+              position: absolute;
+              top: 0;
+              right: 106%;
+              &:hover {
+                display: block;
+              }
+            }
+
+            > li {
               width: 180px;
               margin: 0px;
               display: block;
@@ -55,6 +63,14 @@ header {
               }
             }
           }
+          position: relative;
+          display: inline-block;
+          list-style-type: none;
+          margin-left: 10px;
+          &:hover ul {
+            display: block;
+          }
+
           a {
             padding: 0 8px;
             color: #222;
@@ -69,6 +85,48 @@ header {
             }
           }
         }
+      }
+    }
+  }
+}
+
+/* Main styles */
+main {
+  background-color: #f9f9ff;
+  .container {
+    > #top-main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      h6 {
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 2px;
+        font-size: 14px;
+      }
+      h1 {
+        color: #222222;
+        margin: 20px 0;
+        font-size: 60px;
+        text-transform: uppercase;
+      }
+      p {
+        color: #777777;
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      a {
+        line-height: 42px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border: none;
+        color: #fff;
+        display: inline-block;
+        font-weight: 500;
+        background: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+        transition: all 0.3s ease 0s;
       }
     }
   }
